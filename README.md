@@ -1,6 +1,7 @@
 # Admin Dashboard Template - Angular 11 Bootstrap 4.6
 ## Preview
-![Preview](https://ibb.co/R0KqPfG)
+
+<a href="https://ibb.co/R0KqPfG"><img src="https://i.ibb.co/hWNSHbx/Screenshot-2021-03-19-at-11-32-57-AM.png" alt="Screenshot-2021-03-19-at-11-32-57-AM" border="0"></a>
 
 ## Development server
 
