@@ -1,30 +1,19 @@
-# Download base image alpine 3.13.5
-FROM alpine:3.13.5
+# Stage 1
+FROM node:14.15.0-alpine as node
 
-# LABEL about the custom image
-LABEL maintainer="mfolee@gmail.com"
-LABEL version="0.1"
-LABEL description="This is custom Docker Image for1 Admin Portal"
+WORKDIR /usr/src/app
 
-# Update Ubuntu Software repository
-RUN apk update
+COPY package*.json ./
 
-# Install git, nodejs and npm
-RUN apk add --no-cache git && apk add --update nodejs-current npm
-RUN addgroup -S node && adduser -S node -G node
-USER node
+RUN npm install yarn
 
-# Define the ENV variable
-ENV admin_portal_dir /opt/frontend/admin-portal
+COPY . .
+RUN yarn install
+RUN yarn build
 
-# Enable PHP-fpm on nginx virtualhost configuration
-COPY --chown=node:node . ${admin_portal_dir}
+# Stage 2
+FROM nginx:1.13.12-alpine
 
-# Volume configuration
-# VOLUME ["/var/www/html"]
+COPY --from=node /usr/src/app/dist/admin-dashboard /usr/share/nginx/html
 
-# Run NPM install
-RUN cd ${admin_portal_dir} && npm install
-
-# Expose Port for the Application
-EXPOSE 4200 4201 4202
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf

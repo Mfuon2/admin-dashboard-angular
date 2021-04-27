@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "admin-dashboard": {
+    "admin-portal": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -75,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "admin-dashboard:build"
+            "browserTarget": "admin-portal:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "admin-dashboard:build:production"
+              "browserTarget": "admin-portal:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "admin-dashboard:build"
+            "browserTarget": "admin-portal:build"
           }
         },
         "test": {
@@ -134,7 +134,7 @@
           },
           "configurations": {
             "production": {
-              "devServerTarget": "admin-dashboard:serve:production"
+              "devServerTarget": "admin-portal:serve:production"
             }
           }
         },
@@ -150,5 +150,5 @@
       }
     }
   },
-  "defaultProject": "admin-dashboard"
+  "defaultProject": "admin-portal"
 }
