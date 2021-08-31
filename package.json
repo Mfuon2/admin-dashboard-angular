@@ -37,7 +37,7 @@
     "chartjs-plugin-datalabels": "^0.7.0",
     "font-awesome": "^4.7.0",
     "lodash-es": "^4.17.21",
-    "ng2-charts": "^2.4.2",
+    "ng2-charts": "^2.4.3",
     "ng2-nvd3": "^2.0.0",
     "ngx-perfect-scrollbar": "^10.1.0",
     "pe7-icon": "^1.0.4",
