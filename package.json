@@ -41,7 +41,7 @@
     "ng2-nvd3": "^2.0.0",
     "ngx-perfect-scrollbar": "^10.1.0",
     "pe7-icon": "^1.0.4",
-    "redux": "4.0.0",
+    "redux": "4.1.1",
     "sass": "^1.32.8",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
